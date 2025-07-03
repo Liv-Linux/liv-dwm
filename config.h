@@ -16,15 +16,15 @@ static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display 
 static const int showsystray        = 1;        /* 0 means no systray */
 static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
-static char font[]            = "monospace:size=10";
-static char dmenufont[]       = "monospace:size=10";
+static char font[]            = "Cascadia Code NF:size=10";
+static char dmenufont[]       = "Cascadia Code NF:size=10";
 static const char *fonts[]          = { font };
-static char normbgcolor[]           = "#222222";
-static char normbordercolor[]       = "#444444";
-static char normfgcolor[]           = "#bbbbbb";
-static char selfgcolor[]            = "#eeeeee";
-static char selbordercolor[]        = "#a80030";
-static char selbgcolor[]            = "#a80030";
+static char normbgcolor[]           = "#1f1d2e";
+static char normbordercolor[]       = "#2a273f";
+static char normfgcolor[]           = "#e0def4";
+static char selfgcolor[]            = "#575279";
+static char selbordercolor[]        = "#c4a7e7";
+static char selbgcolor[]            = "#c4a7e7";
 static char *colors[][3] = {
        /*               fg           bg           border   */
        [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
@@ -106,6 +106,8 @@ static const char *files[] = {"pcmanfm", NULL};
 static const char *dis[] = {"dev.vencord.Vesktop", NULL};
 static const char *ala[] = {"alacritty", NULL};
 static const char *reskey[] = {"setxkbmap", NULL};
+static const char *lock[] = {"sh", "/home/liv/.local/scripts/dmenu-logout", NULL};
+static const char *lockctrl[] = {"systemctl suspend", "&", "slock", NULL};
  
 /*
  * Xresources preferences to load at startup
@@ -214,6 +216,8 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_t,spawn,{.v = ala} },
 	{ MODKEY|ShiftMask,             XK_p,spawn,{.v = files} },
 	{ MODKEY|ControlMask,           XK_r,spawn,{.v = reskey} },
+	{ MODKEY,                       XK_x,spawn,{.v = lock} },
+	{ MODKEY|ControlMask,           XK_x,spawn,{.v = lockctrl} },
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} }, 
 
