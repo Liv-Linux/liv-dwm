@@ -18,6 +18,7 @@ static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
 static char font[]            = "JetBrains Mono:size=10";
 static char dmenufont[]       = "JetBrains Mono:size=10";
+static const int refreshrate        = 165;       /* Update rate for drag and resize events, in updates (frames) per second */
 static const char *fonts[]          = { font };
 static char normbgcolor[]           = "#1f1d2e";
 static char normbordercolor[]       = "#2a273f";

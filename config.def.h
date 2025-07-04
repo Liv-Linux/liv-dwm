@@ -18,6 +18,7 @@ static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
 static char font[]            = "monospace:size=10";
 static char dmenufont[]       = "monospace:size=10";
+static const int refreshrate        = 60;       /* Update rate for drag and resize events, in updates (frames) per second */
 static const char *fonts[]          = { font };
 static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";
